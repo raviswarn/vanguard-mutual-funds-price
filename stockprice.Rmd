@@ -18,7 +18,7 @@ library("corrplot")
 # change this to the appropriate path on your computer. This is where some data will be saved
 
 ```{r}
-savePath="/Users/Raveendra_Swarna/Documents/gitrepos/stockprice/Data/"
+savePath="/Users/Raveendra_Swarna/Documents/gitrepos/vanguard-mutual-funds-price/Data/"
 ```
 
 load data from Yahoo finance! get monthly adjusted closing price data on Vanguard mutual fund data from Yahoo using the tseries function get.hist.quote. Set sample to February 2010 through July 2018. Note: if you are not careful with the start and end dates or if you set the retclass to "ts" then results might look weird.
@@ -238,9 +238,9 @@ VaR.empirical.05
 VaR.empirical.01 = Value.at.Risk(ret.mat, p=0.01, method="empirical")
 VaR.empirical.01
 ```
-# write a function to compute the annual normal VaR
 
-# function to bootstrap VaR
+# write a function to compute the annual normal VaR, function to bootstrap VaR
+
 ```{r}
 ValueAtRisk.boot = function(x, idx, p=0.05, w=100000) {
 
@@ -287,11 +287,9 @@ rhohat = function(x) {
   cor(x)[1,2]
 }
 ```
-# do the rest yourself
 
-# Portfolio theory questions. Portfolio functions are in IntroCompFinR
+# do the rest yourself, Portfolio theory questions. Portfolio functions are in IntroCompFinR, compute global minimum variance portfolio
 
-# compute global minimum variance portfolio
 ```{r}
 gmin.port <- globalMin.portfolio(muhat.vals, cov.mat)
 attributes(gmin.port)
